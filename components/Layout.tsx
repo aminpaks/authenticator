@@ -7,10 +7,8 @@ import {
   IoQrCodeSharp,
   IoSettingsSharp,
 } from 'react-icons/io5';
-
 import {
   AppShell,
-  Badge,
   Container,
   Divider,
   Flex,
@@ -20,6 +18,8 @@ import {
   Text,
   Title,
 } from '@mantine/core';
+
+import {Favicon} from './Favicon';
 
 type Props = {
   title?: string;
@@ -33,6 +33,7 @@ export default function Layout({children, title = ''}: Props) {
         <title>{`Authenticator${title ? ` - ${title}` : ''}`}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <Favicon />
       </Head>
       <AppShell
         padding="md"
