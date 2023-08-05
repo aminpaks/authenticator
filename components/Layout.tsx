@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import {ReactNode} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import {
@@ -19,21 +19,16 @@ import {
   Title,
 } from '@mantine/core';
 
-import {Favicon} from './Favicon';
-
 type Props = {
   title?: string;
   children?: ReactNode;
 };
 
-export default function Layout({children, title = ''}: Props) {
+export function Layout({children, title = ''}: Props) {
   return (
     <>
       <Head>
-        <title>{`Authenticator${title ? ` - ${title}` : ''}`}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <Favicon />
+        <title>{`${title ? `${title} | ` : ''}Authenticator`}</title>
       </Head>
       <AppShell
         padding="md"

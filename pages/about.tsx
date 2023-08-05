@@ -1,5 +1,5 @@
-import {Button, Flex, Grid, Stack, Table, Text} from '@mantine/core';
-import Layout from '../components/Layout';
+import {Button, Flex, Text} from '@mantine/core';
+import {Layout} from '../components/Layout';
 import {VscGithub} from 'react-icons/vsc';
 import Link from 'next/link';
 

@@ -1,6 +1,7 @@
 export function Favicon() {
   return (
     <>
+      <link rel="manifest" href="/manifest.json" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -18,7 +19,6 @@ export function Favicon() {
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link rel="manifest" href="/site.webmanifest" />
     </>
   );
 }

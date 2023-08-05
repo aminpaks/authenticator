@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import {Layout} from '../components/Layout';
 import {UploadImage} from '../components/Upload';
 
 export default function IndexPage() {

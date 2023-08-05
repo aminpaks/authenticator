@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import {Layout} from '../components/Layout';
 import {OtpCode} from '../components/OtpCode';
 
 export default function OptCode() {

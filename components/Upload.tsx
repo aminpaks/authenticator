@@ -52,16 +52,18 @@ export function UploadImage() {
         setState((state) => {
           const newState = state.map((item) => {
             const result = data.value.find(({name}) => item.name === name);
-            return {
-              name: item.name,
-              url: item.url,
-              status: result.status,
-              ...(result.status === 'fulfilled'
-                ? {value: result.value}
-                : {
-                    reason: result.reason || 'Error: Unknown!',
-                  }),
-            } as StateItem;
+            return result
+              ? ({
+                  name: item.name,
+                  url: item.url,
+                  status: result.status,
+                  ...(result.status === 'fulfilled'
+                    ? {value: result.value}
+                    : {
+                        reason: result.reason || 'Error: Unknown!',
+                      }),
+                } as StateItem)
+              : item;
           });
           return newState;
         });

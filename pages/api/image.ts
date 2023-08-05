@@ -50,8 +50,10 @@ const parseRequest = async (req: NextApiRequest) => {
   const form = formidable({});
   const [_, {file: files}] = await form.parse(req);
   return Array.isArray(files)
-    ? files.map((file) => createFileWithName(file, file.originalFilename))
-    : [createFileWithName(files, files.originalFilename)];
+    ? files.map((file, index) =>
+        createFileWithName(file, file.originalFilename || `file-${index}`)
+      )
+    : [createFileWithName(files, files.originalFilename || 'file-0')];
 };
 
 async function decodeQrCodes(

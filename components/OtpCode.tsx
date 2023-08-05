@@ -1,18 +1,13 @@
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {
-  Box,
   Button,
   Center,
   CopyButton,
-  Flex,
   Grid,
   Input,
   MantineSize,
-  NumberInput,
-  PinInput,
   Progress,
-  SimpleGrid,
   Stack,
   Text,
   TextInput,
@@ -21,12 +16,7 @@ import {
 import {notifications} from '@mantine/notifications';
 
 import {generateTOTP} from '../utils/token-generator';
-import {
-  IoBarcodeSharp,
-  IoClipboardOutline,
-  IoCopyOutline,
-  IoCopySharp,
-} from 'react-icons/io5';
+import {IoClipboardOutline, IoCopyOutline} from 'react-icons/io5';
 
 export function OtpCode() {
   const {push, query} = useRouter();

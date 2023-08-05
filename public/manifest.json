@@ -3,8 +3,9 @@
   "short_name": "Auth",
   "description": "Decode QRCode, and generate one time password codes",
   "display": "standalone",
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "start_url": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
