@@ -25,20 +25,24 @@ type StateItem =
 export function UploadImage() {
   const theme = useMantineTheme();
   const [state, setState] = useState<StateItem[]>([]);
-
   const handleFilesDrop = useCallback((acceptedFiles: File[]) => {
     const body = new FormData();
-    setState(
-      acceptedFiles.map((file) => ({
-        name: file.name,
+    const newState = acceptedFiles.map((file) => {
+      const name = String(
+        Date.now() +
+          Math.floor(Math.random() * 9e18)
+            .toString(16)
+            .toUpperCase()
+      );
+      body.append('file', file, name);
+      return {
+        name,
         url: URL.createObjectURL(file),
-        status: 'loading',
-      }))
-    );
-
-    acceptedFiles.forEach((file) => {
-      body.append('file', file, file.name);
+        status: 'loading' as const,
+      };
     });
+
+    setState(newState);
 
     async function upload() {
       const response = await fetch('/api/image', {
