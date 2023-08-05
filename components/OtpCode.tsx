@@ -64,7 +64,7 @@ export function OtpCode() {
 
   return (
     <Center>
-      <Stack maw={340}>
+      <Stack maw={360}>
         <TextInput
           label="Secret"
           type="text"
